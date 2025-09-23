@@ -1,0 +1,82 @@
+{
+  "name": "Entry",
+  "base": "Model",
+  "plural": "_entry",
+  "description": "each entry represents one circle in ITM bar",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "Validation": true
+  },  
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": ["id of the entry,",
+                      "it is unique in entries array of the document"]
+    },
+    "name": {
+      "type": "string",
+      "description": "display name"
+    },
+    "lname": {
+      "type": "string",
+      "required": false,
+      "default": "",
+      "description": "lower-case of name"
+    },
+    "type": {
+      "type": "string",
+      "description": ["the entry type[",
+                      "people,",
+                      "community]"]
+    },
+    "states": {
+      "type": [],
+      "required": false,
+      "default":[],
+      "description": "an array of the state of this entry like NORMAL(no value), DELETED, NOACCESS."
+    },
+    "image": {
+      "type": "Image",
+      "description": ""
+    },
+    "created": {
+      "type": "date",
+      "required": false,
+      "defaultFn": "now",
+      "description": "the creation time of this entry, no change after the intial this entry creation"
+    },
+    "modified": {
+      "type": "date",
+      "required": false,
+      "defaultFn": "now",
+      "description": "the last modified time-stamp, refresh with each update operation of this entry"
+    },    
+    "metadata": {
+      "type": "Metadata",
+      "required": false,
+      "default": {},
+      "description": "an extended sub-document contains any extension fields"
+    },
+    "tags": {
+        "type": [],
+        "required": false,
+        "default":[],
+        "description": "a string array, it is used to tag current entry"
+    },
+    "synced": {
+      "type": "date",
+      "required": false,
+      "defaultFn": "now",
+      "description": "last synced time of this entry"
+    }
+  },
+  "strict": true,
+  "hidden":["modified", "created", "lname", "synced"],
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

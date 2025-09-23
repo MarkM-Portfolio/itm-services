@@ -1,0 +1,6 @@
+{
+  "itmDb": {
+    "name": "mongo",
+    "connector": "mongodb"
+    }
+}

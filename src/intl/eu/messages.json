@@ -1,0 +1,18 @@
+{
+  "8a39126103a157f501affa070367a1b0": "{0} instantzia ez da baliozkoa. Xehetasunak: {1}.",
+  "msg_itm_error_name_required":"Errorearen izena beharrezkoa da",
+  "msg_itm_property_too_long":"'{0}' propietatea luzeegia da (>{1} karaktere) (balioa: {2})",
+  "msg_itm_property_too_short":"'{0}' propietatea laburregia da (<{1} karaktere) (balioa: {2})",
+  "msg_itm_not_found_by_entry_id":"Ezin da ID hau duen sarrera aurkitu: {0} .",
+  "msg_itm_not_found_by_target_id":"Ezin da helburuko ID hau duen sarrera aurkitu: {0}",
+  "msg_itm_duplicate_id":"bikoiztu ID hau: {0}",
+  "msg_itm_id_different_targetId":"'id' propietatea ({0}) eta 'targetId' propietatea ({1}) ezin dira berdinak izan",
+  "msg_itm_model_properties_not_null":"Modeloaren ezaugarriak zehaztu behar dira",
+  "msg_itm_cannot_be_blank":"Ezin da '{0}' propietatea hutsik utzi (balioa: {1})",
+  "msg_itm_cannot_null":"'{0}' propietateak balio bat izan behar du (value: {1})",
+  "msg_itm_cannot_connect_to_connections":"ezin izan da konexioetara konektatu",
+  "msg_itm_unknown_property":"'{0}' propietatea ez dago modeloan zehaztuta",
+  "msg_itm_object_too_long":"objektuak {0} karaktere baino gutxiago izan behar ditu",
+  "msg_itm_reached_maximum_visible_entries": "Sarreren gehienezko kopurua gaindituko da"
+}
+

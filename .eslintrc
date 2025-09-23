@@ -1,0 +1,14 @@
+{
+  'extends': 'ess',
+  'env': {
+    'jasmine': true
+  },
+  'rules': {
+    'no-param-reassign': [2, { 'props': false }],
+  },
+  'settings': {
+    'import/resolver': {
+      'babel-module': {}
+    }
+  }
+}

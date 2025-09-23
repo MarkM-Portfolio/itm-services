@@ -1,0 +1,17 @@
+{
+  "presets": [
+    ["env", {
+      "targets": {
+        "node": "14"
+      }
+    }]
+  ],
+  "sourceMaps": "inline",
+  "plugins": ["rewire", ["module-resolver", {
+    "root": ["./src"],
+    "alias": {
+      "src": "./src",
+      "tests": "./tests"
+    }}
+  ]]
+}

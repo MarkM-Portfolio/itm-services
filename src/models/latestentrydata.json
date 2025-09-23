@@ -1,0 +1,46 @@
+{
+  "name": "Latestentrydata",
+  "base": "Model",
+  "plural": "Latestentrydata",
+  "description": "to store all newnest synced data",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  }, 
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true,
+      "required": true,
+      "description": ["id of the entry"]
+    },
+    "name": {
+      "type": "string",
+      "required": false,
+      "description": "display name"
+    },
+    "modified": {
+      "type": "date",
+      "required": false,
+      "defaultFn": "now",
+      "description": "the last modified time-stamp, refresh with each update operation of this entry"
+    }, 
+    "states": {
+      "type": [],
+      "required": false,
+      "default":[],
+      "description": "an array of the state of this entry like NORMAL(no value), DELETED, NOACCESS."
+    },   
+    "metadata": {
+      "type": "Metadata",
+      "required": false,
+      "default": {},
+      "description": "an extended sub-document contains any extension fields"
+    }
+  },
+  "strict": false,
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

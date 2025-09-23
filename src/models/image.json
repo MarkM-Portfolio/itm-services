@@ -1,0 +1,27 @@
+{
+  "name": "Image",
+  "base": "Model",
+  "description": "metadata of the entry image",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "url": {
+      "type": "string",
+      "description": "url of the image"
+    },
+    "alt": {
+      "type": "string",
+      "required": false,
+      "default": "",
+      "descripton": "if url has no value, this value can be used"
+    }
+  },
+  "strict": true,
+  "hidden":["id"],
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

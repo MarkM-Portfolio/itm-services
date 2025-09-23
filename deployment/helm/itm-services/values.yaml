@@ -1,0 +1,66 @@
+# Default values for itm-services.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+#Common
+
+name: itm-services
+namespace: connections
+replicaCount: 3
+deploymentType: ""
+
+image:
+  repository: connections-docker.artifactory.cwp.pnp-hcl.com
+  tag: latest
+  pullPolicy: IfNotPresent
+  pullSecrets: myregkey
+
+global:
+  onPrem: null
+
+service:
+  name: itm-services
+#  type: NodePort
+  port        : 3000
+  externalPort: 3000
+  internalPort: 3000
+
+containers:
+  securityContext:
+    allowPrivilegeEscalation: false
+    readOnlyRootFilesystem: false
+    runAsUser: 1000
+    runAsNonRoot: true
+
+env:
+  configMapKeyRef:
+    name: connections-env
+  validateTokenMatch: "true"
+
+rollingUpdate:
+  maxUnavailable: 1
+  maxSurge: 1
+
+resources:
+  service:
+    limits:
+      cpu: "1"
+      memory: "500Mi"
+    requests:
+      cpu: "0.1"
+      memory: "75Mi"
+  tester:
+    limits:
+      cpu: "0.5"
+      memory: "400Mi"
+    requests:
+      cpu: "0.05"
+      memory: "75Mi"
+
+livenessProbe:
+  periodSeconds: 30
+  initialDelaySeconds: 30
+  timeoutSeconds: 10
+readinessProbe:
+  periodSeconds: 30
+  initialDelaySeconds: 30
+  timeoutSeconds: 10

@@ -1,0 +1,79 @@
+{
+  "name": "Profile",
+  "base": "PersistedModel",
+  "plural": "Profile",
+  "description": "user's ITM profile",
+  "mongodb": {
+      "collection": "profiles"
+  },
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "Validation": true,
+    "UserInfoLoader": true,
+    "DataSync": true,
+    "ConditionalGet": true,
+    "Computed": {
+      "modified": "$now"
+    }
+  },
+  "properties": {
+    "_id": {
+      "type": "string",
+      "required": true,
+      "id": true,
+      "description": ["it is immutable, user's unique id,",
+                      "it is part of the sharding key,",
+                      "it replaces the auto generated _id of mongo,",
+                      "it is from the internal PROF_KEY of Profiles application"]
+    },
+    "orgId": {
+      "type": "string",
+      "required": true,
+      "description": ["it is added for futrue extended,",
+                      "it is part of the sharding key in Cloud, but not in On-premise"]
+    },
+    "created": {
+      "type": "date",
+      "required": false,
+      "defaultFn": "now",
+      "description": "creation time of this document, not changed after the document intial creation"
+    },
+    "modified": {
+      "type": "date",
+      "required": false,
+      "defaultFn": "now",
+      "description": "last modified time of this document, refresh when updating"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "entryList": {
+      "type": "embedsMany",
+      "model": "Entry",
+      "property": "entries",
+      "options": {
+        "validate": true,
+        "forceId": false
+      },
+      "description": "entry list added by user"
+    }
+  },
+  "hidden":["modified", "created", "orgId", "_id"],
+  "http":{"path": "/"},
+  "acls": [],
+  "methods": {},
+  "indexes": {
+    "profiles_unique_index_1": {
+      "keys": {
+        "_id": 1,
+        "orgId": 1
+      },
+      "options": {
+        "unique": true
+      }
+    }
+  }
+}

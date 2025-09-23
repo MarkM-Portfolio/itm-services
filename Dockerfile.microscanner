@@ -1,0 +1,20 @@
+# This Dockerfile is used to run https://get.aquasec.com/microscanner
+# TOKEN: generated token by: https://microscanner.aquasec.com/signup
+# example: 
+#   docker build -f Dockerfile.microscanner -t itm-scanner --build-arg TOKEN=XXYYZZ .
+#
+
+FROM connections-docker.artifactory.cwp.pnp-hcl.com/itm/itm-services
+
+################## BEGIN INSTALLATION ######################
+ARG TOKEN
+#RUN echo "token:$TOKEN"
+USER root
+WORKDIR /opt/app
+RUN apk add --no-cache ca-certificates && update-ca-certificates && \
+    wget -O /microscanner https://get.aquasec.com/microscanner && \
+    chmod +x /microscanner && \
+    /microscanner ${TOKEN} && \
+    rm -rf /microscanner
+##################### INSTALLATION END #####################
+CMD ["node"]

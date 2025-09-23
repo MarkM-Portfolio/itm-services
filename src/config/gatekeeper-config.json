@@ -1,0 +1,28 @@
+{
+  "my-test-f1": {
+    "description": "My new test feature1",
+    "isEnabled": true,
+    "isGlobal": false,
+    "orgs": {
+      "0000": true,
+      "0001": true,
+      "0003": false
+    },
+    "groups": {}
+  },
+  "audit-events": {
+    "description": "audit event generation",
+    "isEnabled": true,
+    "isGlobal": true
+  },
+  "communities-acl-sync": {
+    "description": "sync any acl change of communities",
+    "isEnabled": true,
+    "isGlobal": true
+  },
+  "sync-people-changes": {
+    "description": "call Profiles bulk API to get peoples data to sync people's changes when calling entries get API'",
+    "isEnabled": true,
+    "isGlobal": true
+  }
+}

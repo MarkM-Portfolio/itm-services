@@ -1,0 +1,8 @@
+apiVersion: v1
+description: Connections itm-services
+name: itm-services
+version: 0.1.0
+keywords:
+  - itm
+  - mongodb
+  - redis

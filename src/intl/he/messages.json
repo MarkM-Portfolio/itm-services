@@ -1,0 +1,18 @@
+{
+  "8a39126103a157f501affa070367a1b0": "המופע {0} אינו חוקי. פרטים: {1}.",
+  "msg_itm_error_name_required":"שם השגיאה דרוש.",
+  "msg_itm_property_too_long":"התכונה '{0}' ארוכה מדי (>{1} תווים) (ערך: {2})",
+  "msg_itm_property_too_short":"התכונה '{0}' קצרה מדי (<{1}  תווים) (ערך: {2})",
+  "msg_itm_not_found_by_entry_id":"הרשומה לא נמצאה לפי זיהוי: {0}",
+  "msg_itm_not_found_by_target_id":"הרשומה לא נמצאה לפי targetId:‏ {0}",
+  "msg_itm_duplicate_id":"זיהוי כפול: {0}",
+  "msg_itm_id_different_targetId":"התכונה 'id' {0} חייבת להיות שונה מהתכונה 'targetId' {1}",
+  "msg_itm_model_properties_not_null":"יש לציין את תכונות המודל",
+  "msg_itm_cannot_be_blank":"התכונה '{0}' אינה יכולה להישאר ריקה (ערך: {1})",
+  "msg_itm_cannot_null":"לתכונה '{0}' חייב להיות ערך (ערך: {1})",
+  "msg_itm_cannot_connect_to_connections":"לא ניתן להתחבר אל Connections",
+  "msg_itm_unknown_property":"התכונה '{0}' אינה מוגדרת במודל.",
+  "msg_itm_object_too_long":"האובייקט חייב להיות קצר מ-{0} תווים",
+  "msg_itm_reached_maximum_visible_entries": "היתה חריגה ממספר הרשומות המרבי."
+}
+

@@ -1,0 +1,10 @@
+instrumentation:
+    excludes: ['**/config/**', 'server.js', 'middlewares.js', 'model-utils.js']
+reporting:
+    dir: ./tests/reports/coverage
+check:
+    global:
+        statements: 90
+        lines: 90
+        branches: 85
+        functions: 90

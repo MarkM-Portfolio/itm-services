@@ -1,0 +1,31 @@
+{
+  "routes": {
+    "../middleware/auth/filter/userFilter.js": {
+      "enabled": false
+    },
+    "../middleware/mock/middlewares#getLoginUser": {
+      "paths": [
+         "${restApiRoot}"
+       ],
+      "enabled": true
+    },
+    "../middleware/mock/middlewares#getProfile": {
+      "paths": [
+         "/profiles/json/profile.do"
+       ],
+      "enabled": true
+    },
+    "../middleware/mock/middlewares#getPeopleIdsMapping": {
+      "paths": [
+         "/people/api/profile/idmappings/batch"
+       ],
+      "enabled": true
+    },
+    "../middleware/mock/middlewares#getProfilesBulk": {
+      "paths": [
+         "/profiles/json/profileBulk.do"
+       ],
+      "enabled": true
+    }
+  }
+}

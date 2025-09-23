@@ -1,0 +1,18 @@
+{
+  "8a39126103a157f501affa070367a1b0": "Экземпляр {0} недопустим. Сведения: {1}.",
+  "msg_itm_error_name_required":"Необходимо задать имя ошибки",
+  "msg_itm_property_too_long":"Слишком длинное значение свойства '{0}' (>{1} символов) (значение: {2})",
+  "msg_itm_property_too_short":"Слишком короткое значение свойства '{0}' (<{1} символов) (значение: {2})",
+  "msg_itm_not_found_by_entry_id":"Не найдена запись с id {0}",
+  "msg_itm_not_found_by_target_id":"Не найдена запись с targetId: {0}",
+  "msg_itm_duplicate_id":"совпадающий id: {0}",
+  "msg_itm_id_different_targetId":"Свойство 'id' {0} не должно совпадать со свойством 'targetId' {1}",
+  "msg_itm_model_properties_not_null":"Необходимо задать свойства модели",
+  "msg_itm_cannot_be_blank":"Свойство '{0}' нельзя оставить пустым (значение: {1})",
+  "msg_itm_cannot_null":"Свойство '{0}' должно иметь значение (значение: {1})",
+  "msg_itm_cannot_connect_to_connections":"не удалось подключиться к Connections",
+  "msg_itm_unknown_property":"Свойство '{0}' не определено в модели",
+  "msg_itm_object_too_long":"объект должен содержать не более {0} символов",
+  "msg_itm_reached_maximum_visible_entries": "Достигнуто максимальное число записей"
+}
+

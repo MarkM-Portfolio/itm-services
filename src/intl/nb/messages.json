@@ -1,0 +1,18 @@
+{
+  "8a39126103a157f501affa070367a1b0": "Forekomsten {0} er ikke gyldig. Detaljer: {1}.",
+  "msg_itm_error_name_required":"Feilnavn kreves",
+  "msg_itm_property_too_long":"'{0}'-egenskap er for lang (>{1} tegn) (verdi: {2})",
+  "msg_itm_property_too_short":"'{0}'-egenskap er for kort (<{1} tegn) (verdi: {2})",
+  "msg_itm_not_found_by_entry_id":"Finner ikke oppføring ved hjelp av id: {0}",
+  "msg_itm_not_found_by_target_id":"Finner ikke oppføring ved hjelp av targetId: {0}",
+  "msg_itm_duplicate_id":"duplikat-id: {0}",
+  "msg_itm_id_different_targetId":"'id'-egenskap {0} må være forskjellig fra 'targetId'-egenskap {1}",
+  "msg_itm_model_properties_not_null":"Modellens egenskaper må angis",
+  "msg_itm_cannot_be_blank":"'{0}'-egenskap kan ikke være tom (verdi: {1})",
+  "msg_itm_cannot_null":"'{0}'-egenskap må ha en verdi (verdi: {1})",
+  "msg_itm_cannot_connect_to_connections":"kan ikke koble til Connections",
+  "msg_itm_unknown_property":"'{0}'-egenskap er ikke definert i modellen",
+  "msg_itm_object_too_long":"objektet må være kortere enn {0} tegn",
+  "msg_itm_reached_maximum_visible_entries": "Maksimalt antall oppføringer er nådd."
+}
+

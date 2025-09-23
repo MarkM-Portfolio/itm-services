@@ -1,0 +1,22 @@
+# This is the docker file for build the tester image
+
+FROM connections-docker.artifactory.cwp.pnp-hcl.com/application-tester
+
+ARG BUILD_VERSION
+ENV BUILD_VERSION $BUILD_VERSION
+
+WORKDIR /usr/src/app/tests
+
+COPY lib-tests lib-tests/
+COPY package.test.json package.json
+COPY package-lock.json /usr/src/app/tests
+
+RUN mv lib-tests/runtests.sh ./ && chmod +x runtests.sh
+RUN npm install --production --registry https://artifactory.cwp.pnp-hcl.com/artifactory/api/npm/v-ess-npm-dev
+
+# reset to /app where npm start will launch the parent governor server
+WORKDIR /app
+
+#RUN addgroup -g 1001 itmtestergroup && adduser -D -H -u 1008 -g 1008 itmtester \
+#  && chown -R itmtester:itmtestergroup /app /docker-entrypoint.sh /usr/src/app
+#USER itmtester

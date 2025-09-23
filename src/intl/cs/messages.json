@@ -1,0 +1,18 @@
+{
+  "8a39126103a157f501affa070367a1b0": "Instance {0} není platná. Podrobnosti: {1}.",
+  "msg_itm_error_name_required":"Je vyžadován název chyby.",
+  "msg_itm_property_too_long":"Vlastnost {0} je příliš dlouhá (>{1} znaků) (hodnota: {2}).",
+  "msg_itm_property_too_short":"Vlastnost {0} je příliš dlouhá (<{1} znaků) (hodnota: {2}).",
+  "msg_itm_not_found_by_entry_id":"Nelze najít položku podle ID: {0}",
+  "msg_itm_not_found_by_target_id":"Nelze najít položku podle vlastnosti targetId: {0}",
+  "msg_itm_duplicate_id":"duplicitní ID: {0}",
+  "msg_itm_id_different_targetId":"Vlastnost id {0} se musí lišit od vlastnosti targetId {1}.",
+  "msg_itm_model_properties_not_null":"Musí být určeny vlastnosti modelu.",
+  "msg_itm_cannot_be_blank":"Vlastnost {0} nesmí zůstat prázdná (hodnota: {1}).",
+  "msg_itm_cannot_null":"Vlastnost {0} musí mít hodnotu (hodnota: {1}).",
+  "msg_itm_cannot_connect_to_connections":"nelze se připojit k produktu Connections",
+  "msg_itm_unknown_property":"Vlastnost {0} není definována v modelu.",
+  "msg_itm_object_too_long":"objekt musí být kratší než {0} znaků",
+  "msg_itm_reached_maximum_visible_entries": "Byl dosažen maximální počet položek."
+}
+

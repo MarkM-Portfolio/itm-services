@@ -1,0 +1,38 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../mixins"
+    ]
+  },
+  "Profile": {
+    "dataSource": "itmDb",
+    "public": true
+  },
+  "Entry": {
+    "dataSource": "itmDb",
+    "public": true
+  },
+  "Image": {
+    "dataSource": "itmDb",
+    "public": false
+  },
+  "Metadata": {
+    "dataSource": "itmDb",
+    "public": false
+  },
+  "Latestentrydata": {
+    "dataSource": "itmDb",
+    "public": false
+  },
+  "User": {
+    "dataSource": false,
+    "public": false
+  }
+}

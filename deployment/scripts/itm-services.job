@@ -1,0 +1,60 @@
+import java.text.SimpleDateFormat
+import java.util.Date
+
+String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date())
+currentBuild.displayName = timestamp
+
+env.TIMESTAMP = timestamp
+
+def job_name = env.JOB_NAME
+def docker_image = job_name
+def docker_file = "Dockerfile"
+def docker_registry = "artifactory.swg.usma.ibm.com:6562"
+def docker_image_tag = docker_registry + "/itm/" + docker_image + ':' + timestamp
+def docker_tested_image_tag = docker_registry + "/itm/" + docker_image + ':' + 'latest'
+def project_git_url = 'https://github.ibm.com/connections/'+ job_name +'.git'
+
+
+node ('docker') {
+    def nodejs_home = tool name: 'nodejs6.9.1', type: 'jenkins.plugins.nodejs.tools.NodeJSInstallation'
+    //nodejs_home = "/usr/local"
+    withEnv(["PATH+NODEJS=${nodejs_home}/bin"]) {
+        ws('workspace/' + job_name) {
+            stage(name: 'build', lock: true) {
+                //git url: project_git_url
+                checkout([$class: 'GitSCM',
+                    branches: [[name: '*/master']],
+                    doGenerateSubmoduleConfigurations: false,
+                    extensions: [], submoduleCfg: [],
+                    userRemoteConfigs: [[credentialsId: 'icdeploy_hcl_auth_by_gittoken', url: project_git_url]]])
+                sh "cp ~/.npmrc.bak ~/.npmrc"
+				sh "npm ci"
+            }
+            stage(name: 'test', lock: true) {
+				 sh "${nodejs_home}/bin/npm run test:unit"
+            }
+			stage(name: 'lint', lock: true) {
+                 sh "${nodejs_home}/bin/npm run check:lint"
+            }
+            stage(name: 'api-test', lock: true) {
+                sh "${nodejs_home}/bin/npm run build"
+				sh "${nodejs_home}/bin/npm run stop:test; ${nodejs_home}/bin/npm run start:test --db=mongo-pipeline"
+                sh "sleep 10"
+                sh "${nodejs_home}/bin/npm run test:api --db=mongo-pipeline"
+				sh "${nodejs_home}/bin/npm run stop:test"
+            }
+            stage(name: "docker", lock: true) {
+                sh "rm -rf node_modules; npm install --production"
+                sh "rm -f ~/.npmrc"
+                sh "docker build -q --tag ${docker_image_tag} -f ${docker_file} ."
+                sh "docker run -p 3000:3000 -d --name ${job_name}_test ${docker_image_tag}"
+                sh "docker stop ${job_name}_test; docker rm ${job_name}_test"
+                sh "docker push ${docker_image_tag} ; " +
+                   "[ -n \"`docker images -q ${docker_tested_image_tag}`\" ] && docker rmi ${docker_tested_image_tag} ;" +
+                   "docker tag ${docker_image_tag} ${docker_tested_image_tag} ;" +
+                   "docker rmi ${docker_image_tag} ; " +
+                   "docker push ${docker_tested_image_tag}"
+            }
+        }
+    }
+}

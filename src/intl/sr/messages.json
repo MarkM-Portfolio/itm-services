@@ -1,0 +1,18 @@
+{
+  "8a39126103a157f501affa070367a1b0": "Instanca {0} nije važeća. Detalji: {1}.",
+  "msg_itm_error_name_required":"Potrebno je ime greške",
+  "msg_itm_property_too_long":"'{0}' svojstvo je predugačko (>{1} znakova) (vrednost: {2})",
+  "msg_itm_property_too_short":"'{0}' svojstvo je prekratko (<{1} znakova) (vrednost: {2})",
+  "msg_itm_not_found_by_entry_id":"Nije moguće pronaći stavku sa ID-om: {0}",
+  "msg_itm_not_found_by_target_id":"Nije moguće pronaći stavku sa targetId-om: {0}",
+  "msg_itm_duplicate_id":"duplirani ID: {0}",
+  "msg_itm_id_different_targetId":"'id' svojstvo {0} je potrebno da bude drugačije od 'targetId' svojstva {1}",
+  "msg_itm_model_properties_not_null":"Potrebno je navesti svojstva modela",
+  "msg_itm_cannot_be_blank":"'{0}' svojstvo ne sme biti ostavljeno prazno (vrednost: {1})",
+  "msg_itm_cannot_null":"'{0}' svojstvo je potrebno da sadrži vrednost (vrednost: {1})",
+  "msg_itm_cannot_connect_to_connections":"nije moguće povezati se sa platformom Connections",
+  "msg_itm_unknown_property":"'{0}' svojstvo nije definisano u modelu",
+  "msg_itm_object_too_long":"objekt je potrebno da bude kraći od {0} znakova",
+  "msg_itm_reached_maximum_visible_entries": "Dosegnut je maksimalni broj unosa"
+}
+

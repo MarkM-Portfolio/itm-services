@@ -1,0 +1,18 @@
+{
+  "8a39126103a157f501affa070367a1b0": "Inštancia {0} je neplatná. Podrobnosti: {1}.",
+  "msg_itm_error_name_required":"Vyžaduje sa názov chyby",
+  "msg_itm_property_too_long":"Vlastnosť '{0}' je pridlhá (>{1} znakov) (hodnota: {2})",
+  "msg_itm_property_too_short":"Vlastnosť '{0}' je prikrátka (<{1} znakov) (hodnota: {2})",
+  "msg_itm_not_found_by_entry_id":"Nenašla sa položka s ID: {0}",
+  "msg_itm_not_found_by_target_id":"Nenašla sa položka s targetId: {0}",
+  "msg_itm_duplicate_id":"duplicitné ID: {0}",
+  "msg_itm_id_different_targetId":"Vlastnosť 'id' {0} sa musí líšiť od vlastnosti 'targetId' {1}",
+  "msg_itm_model_properties_not_null":"Musia byť zadané vlastnosti modelu",
+  "msg_itm_cannot_be_blank":"Vlastnosť '{0}' nemôže zostať prázdna (hodnota: {1})",
+  "msg_itm_cannot_null":"Vlastnosť '{0}' musí mať hodnotu (hodnota: {1})",
+  "msg_itm_cannot_connect_to_connections":"nedá sa pripojiť k produktu Connections",
+  "msg_itm_unknown_property":"Vlastnosť '{0}' nie je definovaná v modeli",
+  "msg_itm_object_too_long":"objekt musí byť kratší ako {0} znakov",
+  "msg_itm_reached_maximum_visible_entries": "Bol dosiahnutý maximálny počet položiek"
+}
+

@@ -1,0 +1,18 @@
+{
+  "8a39126103a157f501affa070367a1b0": "{0} 实例无效。详细信息：{1}。",
+  "msg_itm_error_name_required":"错误名称是必需的",
+  "msg_itm_property_too_long":"“{0}”属性太长（>{1} 个字符）（值：{2}）",
+  "msg_itm_property_too_short":"“{0}”属性太短（<{1} 个字符）（值：{2}）",
+  "msg_itm_not_found_by_entry_id":"按照标识找不到条目：{0}",
+  "msg_itm_not_found_by_target_id":"按照 targetId 找不到条目：{0}",
+  "msg_itm_duplicate_id":"重复标识：{0}",
+  "msg_itm_id_different_targetId":"“id”属性 {0} 必须与“targetId”属性 {1} 不同",
+  "msg_itm_model_properties_not_null":"必须指定模型的属性",
+  "msg_itm_cannot_be_blank":"“{0}”属性不能留空（值：{1}）",
+  "msg_itm_cannot_null":"“{0}”属性必须包含值（值：{1}）",
+  "msg_itm_cannot_connect_to_connections":"无法连接到 Connections",
+  "msg_itm_unknown_property":"在模型中未定义“{0}”属性。",
+  "msg_itm_object_too_long":"对象必须短于 {0} 个字符",
+  "msg_itm_reached_maximum_visible_entries": "已达到最大条目数"
+}
+

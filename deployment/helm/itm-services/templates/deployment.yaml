@@ -1,0 +1,201 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.name }}
+  namespace: {{ .Values.namespace }}
+  labels:
+    app: {{ template "name" . }}
+    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  strategy:
+    rollingUpdate:
+      maxUnavailable: {{ .Values.rollingUpdate.maxUnavailable }}
+      maxSurge: {{ .Values.rollingUpdate.maxSurge }}
+  selector:
+    matchLabels:
+      app: {{ .Values.name }}
+      mService: {{ .Values.name }}
+  template:
+    metadata:
+      name: {{ .Values.name }}
+      labels:
+        app: {{ .Values.name }}
+        release: {{ .Release.Name }}
+        mService: {{ .Values.name }}
+    spec:
+      affinity:
+        nodeAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 1
+            preference:
+              matchExpressions:
+              - key: "type"
+                operator: In
+                values: ["generic"]
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 1
+            podAffinityTerm:
+              topologyKey: "kubernetes.io/hostname"
+              labelSelector:
+                matchExpressions:
+                - key: "mService"
+                  operator: In
+                  values: [{{ .Values.name | quote }}]
+      containers:
+        - name: {{ .Values.name }}
+{{- if .Values.global.onPrem }}
+          image: {{ .Values.global.image.repository }}/itm-services:{{ .Values.image.tag }}
+{{- else }}
+          image: {{ .Values.image.repository }}/itm-services:{{ .Values.image.tag }}
+{{- end }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          resources:
+{{ toYaml .Values.resources.service | indent 12 }}
+          securityContext:
+            allowPrivilegeEscalation: {{ .Values.containers.securityContext.allowPrivilegeEscalation }}
+            readOnlyRootFilesystem: {{ .Values.containers.securityContext.readOnlyRootFilesystem }}
+            runAsUser: {{ .Values.containers.securityContext.runAsUser }}
+            runAsNonRoot: {{ .Values.containers.securityContext.runAsNonRoot }}           
+          env:
+            - name: LOG_LEVEL
+              value: "info"
+            - name: NODE_ENV
+              value: "production"
+            - name: DB_HOST
+              value: "mongo5"
+            - name: DB_PORT
+              value: "27017"
+            - name: MONGO_CERT_USER
+              value: "itm"
+            - name: APPLICATION_CERT_FOLDER
+              value: "/opt/app/ca"
+            - name: MONGO_RS_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.env.configMapKeyRef.name }}
+                  key: mongo-rs-name
+            - name: MONGO_RS_MEMBERS_HOSTS
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.env.configMapKeyRef.name }}
+                  key: mongo5-rs-members-hosts
+            - name: CONNECTIONS_PROFILES_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.env.configMapKeyRef.name }}
+                  key: ic-profiles-url
+            - name: CONNECTIONS_HOMEPAGE_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.env.configMapKeyRef.name }}
+                  key: ic-homepage-url
+            - name: CONNECTIONS_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.env.configMapKeyRef.name }}
+                  key: ic-connections-url
+            - name: S2S_AUTH_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: s2ssecret
+                  key: s2s_auth_token
+            - name: JWT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: jwt-secret
+                  key: secret
+            - name: JWT_EXPIRES_IN_MINUTES
+              value: "10"
+            - name: JWT_NAME
+              value: cnx_token
+            - name: CONNECTIONS_AUTH_TOKEN_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.env.configMapKeyRef.name }}
+                  key: ic-auth-token-name
+            - name: REDIS_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.env.configMapKeyRef.name }}
+                  key: redis-node-service-name
+            - name: REDIS_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.env.configMapKeyRef.name }}
+                  key: redis-node-service-port
+            - name: REDIS_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: redis-secret
+                  key: secret
+            - name: REDIS_AUTH_ENABLED
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.env.configMapKeyRef.name }}
+                  key: redis-auth-enabled
+            - name: REDIS_OPTIONS
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.env.configMapKeyRef.name }}
+                  key: redis-options
+            - name: REDIS_INSTALLED
+              value: "false"
+            - name: NODE_TLS_REJECT_UNAUTHORIZED
+              value: "0"
+            - name: NEW_RELIC_LICENSE_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: new-relic-secret
+                  key: new-relic-license-key
+            - name: NEW_RELIC_ENABLED
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.env.configMapKeyRef.name }}
+                  key: new-relic-enabled
+            - name: NEW_RELIC_LABELS
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.env.configMapKeyRef.name }}
+                  key: new-relic-labels
+            - name: VALIDATE_TOKEN_MATCH
+              value: "{{ .Values.env.validateTokenMatch }}"
+          ports:
+          - name: {{ .Values.name }}
+            containerPort: {{ .Values.service.internalPort }}
+          livenessProbe:
+            httpGet :
+              path : /itm/healthy/
+              port : {{ .Values.service.internalPort }}
+            periodSeconds: {{ .Values.livenessProbe.periodSeconds }}
+            initialDelaySeconds : {{ .Values.livenessProbe.initialDelaySeconds }}
+            timeoutSeconds : {{ .Values.livenessProbe.timeoutSeconds }}
+          readinessProbe:
+            httpGet:
+              path: /itm/version/
+              port: {{ .Values.service.internalPort }}
+            periodSeconds: {{ .Values.readinessProbe.periodSeconds }}
+            initialDelaySeconds: {{ .Values.readinessProbe.initialDelaySeconds }}
+            timeoutSeconds: {{ .Values.readinessProbe.timeoutSeconds }}
+          volumeMounts:
+            - name: mongo-secret-vol
+              mountPath: /etc/mongodb/x509
+            - name: redis-secret-vol
+              mountPath: /etc/redis/redis-secret
+            - name: jwt-secret-vol
+              mountPath: /etc/jwt/jwt-secret
+      volumes:
+        - name: mongo-secret-vol
+          secret:
+            secretName: mongo-secret
+        - name: redis-secret-vol
+          secret:
+            secretName: redis-secret
+        - name: jwt-secret-vol
+          secret:
+            secretName: jwt-secret
+      imagePullSecrets:
+        - name: {{ .Values.image.pullSecrets }}

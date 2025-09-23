@@ -1,0 +1,21 @@
+{
+  "name": "User",
+  "base": "Model",
+  "description": "",
+  "properties": {
+    "userId": {
+      "type": "string",
+      "required": true,
+      "description": "user's id, from LDAP server."
+    },
+    "prof_key": {
+      "type": "string",
+      "required": false,
+      "description": "internal id, for profile only"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

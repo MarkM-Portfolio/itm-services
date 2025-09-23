@@ -1,0 +1,18 @@
+{
+  "8a39126103a157f501affa070367a1b0": "{0} 實例無效。詳細資料為：{1}。",
+  "msg_itm_error_name_required":"需要錯誤名稱",
+  "msg_itm_property_too_long":"'{0}' 內容太長（超過 {1} 個字元）（值：{2}）",
+  "msg_itm_property_too_short":"'{0}' 內容太短（少於 {1} 個字元）（值：{2}）",
+  "msg_itm_not_found_by_entry_id":"無法依 ID 找到項目：{0}",
+  "msg_itm_not_found_by_target_id":"無法依目標 ID 找到項目：{0}",
+  "msg_itm_duplicate_id":"ID 重複：{0}",
+  "msg_itm_id_different_targetId":"'id' 內容 {0} 必須有別於 'targetId' 內容 {1}",
+  "msg_itm_model_properties_not_null":"必須指定模型的內容",
+  "msg_itm_cannot_be_blank":"'{0}' 內容不能保留空白（值：{1}）",
+  "msg_itm_cannot_null":"'{0}' 內容必須具有值（值：{1}）",
+  "msg_itm_cannot_connect_to_connections":"無法連接到 Connections",
+  "msg_itm_unknown_property":"模型中未定義 '{0}' 內容",
+  "msg_itm_object_too_long":"物件必須短於 {0} 個字元",
+  "msg_itm_reached_maximum_visible_entries": "已達到項目數目上限"
+}
+

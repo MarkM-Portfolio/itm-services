@@ -1,0 +1,36 @@
+{
+  "loginUrl": "http://9.111.97.51:3000/ibm-connections/login",
+  "callbackUrl": "http://9.111.97.51:3000/ibm-connections/auth/callback?code=",
+  "tokenRes": {
+    "access_token":"success",
+    "token_type":"Bearer",
+    "expires_in":43199,
+    "scope":"",
+    "refresh_token":"token"
+  },
+ "profileRes": {
+    "entry":{
+      "appData": {
+        "connections": {
+          "isExternal":"false",
+          "organizationId":"urn:lsid:lconn.ibm.com:connections.organization:00000000-0000-0000-0000-000000000000"
+        }
+      },
+      "displayName":"username",
+      "emails":[{"type":"primary","value":"username@janet.iris.com","primary":true}],
+      "id":"urn:lsid:lconn.ibm.com:profiles.person:userid"
+    }
+  },
+  "users": {
+    "ajones11": {
+      "id": "ajones11",
+      "authToken": "Fake_Ltpatoken_Cookie_Value_ajones11",
+      "authorization": ""
+    },
+    "ajones12": {
+      "id": "ajones12",
+      "authToken": "Fake_Ltpatoken_Cookie_Value_ajones12",
+      "authorization": ""
+    }
+  }
+}

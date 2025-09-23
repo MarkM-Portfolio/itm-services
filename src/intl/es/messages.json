@@ -1,0 +1,18 @@
+{
+  "8a39126103a157f501affa070367a1b0": "La instancia {0} no es válida. Detalles: {1}.",
+  "msg_itm_error_name_required":"Se necesita el nombre del error",
+  "msg_itm_property_too_long":"La propiedad '{0}' es demasiado larga (>{1} caracteres) (valor: {2})",
+  "msg_itm_property_too_short":"La propiedad '{0}' es demasiado corta (<{1} caracteres) (valor: {2})",
+  "msg_itm_not_found_by_entry_id":"No se puede encontrar la entrada por id: {0}",
+  "msg_itm_not_found_by_target_id":"No se puede encontrar la entrada por targetId: {0}",
+  "msg_itm_duplicate_id":"id duplicado: {0}",
+  "msg_itm_id_different_targetId":"La propiedad 'id' {0} debe ser distinta de la propiedad 'targetId' {1}",
+  "msg_itm_model_properties_not_null":"Se deben especificar las propiedades del modelo",
+  "msg_itm_cannot_be_blank":"La propiedad '{0}' no puede estar en blanco (valor: {1})",
+  "msg_itm_cannot_null":"La propiedad '{0}' debe tener un valor (valor: {1})",
+  "msg_itm_cannot_connect_to_connections":"no se puede conectar a Connections",
+  "msg_itm_unknown_property":"La propiedad '{0}' no está definida en el modelo",
+  "msg_itm_object_too_long":"el objeto debe tener menos de {0} caracteres",
+  "msg_itm_reached_maximum_visible_entries": "Se ha alcanzado el número máximo de entradas."
+}
+

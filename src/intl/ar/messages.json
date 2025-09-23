@@ -1,0 +1,18 @@
+{
+  "8a39126103a157f501affa070367a1b0": "النسخة {0} غير صحيحة. التفاصيل: {1}.",
+  "msg_itm_error_name_required":"اسم الخطأ مطلوبا",
+  "msg_itm_property_too_long":"الخاصية '{0}' طويلة جدا (>{1} حرف/حروف) (القيمة: {2})",
+  "msg_itm_property_too_short":"الخاصية '{0}' قصيرة جدا (<{1} حرف/حروف) (القيمة: {2})",
+  "msg_itm_not_found_by_entry_id":"لا يمكن ايجاد ادخال بكود التعريف: {0}",
+  "msg_itm_not_found_by_target_id":"لا يمكن ايجاد ادخال بكود التعريف المستهدف: {0}",
+  "msg_itm_duplicate_id":"تكرار كود التعريف: {0}",
+  "msg_itm_id_different_targetId":"الخاصية 'id' ‏{0} يجب أن تكون مختلفة عن الخاصية 'targetId' ‏{1}",
+  "msg_itm_model_properties_not_null":"يجب تحديد خصائص النموذج",
+  "msg_itm_cannot_be_blank":"لا يمكن ترك الخاصية '{0}' دون قيمة (القيمة: {1})",
+  "msg_itm_cannot_null":"يجب أن يكون للخاصية '{0}' قيمة (القيمة: {1})",
+  "msg_itm_cannot_connect_to_connections":"لا يمكن الاتصال مع Connections",
+  "msg_itm_unknown_property":"لم يتم تعريف الخاصية '{0}' في النموذج",
+  "msg_itm_object_too_long":"يجب أن يكون العنصر أقصر من {0} حرف",
+  "msg_itm_reached_maximum_visible_entries": "تم الوصول الى الحد الأقصى لعدد الادخالات"
+}
+

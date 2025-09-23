@@ -1,0 +1,17 @@
+node_modules
+tests/reports/**/*
+.log
+.project
+.npmrc
+**/*.bak
+lib
+.DS_Store
+npm-debug.log
+/lib-tests/
+.idea/
+*.log
+.git
+.terraform
+.venv
+.vscode
+__pycache__

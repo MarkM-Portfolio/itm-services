@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ .Values.name }}-testes"
+  namespace: {{ .Values.namespace }}
+  annotations:
+    "helm.sh/hook": test-success
+spec:
+  containers:
+  - name: {{ .Values.name }}-testes
+    image: "{{ .Values.image.repository }}/itm-services-tester:{{ .Values.image.tag }}"
+    imagePullPolicy: {{ .Values.image.pullPolicy }}
+    resources:
+      limits:
+        cpu: "{{ .Values.resources.tester.limits.cpu }}"
+        memory: "{{ .Values.resources.tester.limits.memory }}"
+      requests:
+        cpu: "{{ .Values.resources.tester.requests.cpu }}"
+        memory: "{{ .Values.resources.tester.requests.memory }}"
+    env:
+    command: ["sh", "-c", "/usr/src/app/tests/runtests.sh"]
+  restartPolicy: Never

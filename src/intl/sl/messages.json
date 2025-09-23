@@ -1,0 +1,18 @@
+{
+  "8a39126103a157f501affa070367a1b0": "Primerek {0} ni veljaven. Podrobnosti: {1}.",
+  "msg_itm_error_name_required":"Ime napake je obvezno",
+  "msg_itm_property_too_long":"Lastnost '{0}' je predolga (>{1} znakov) (vrednost: {2})",
+  "msg_itm_property_too_short":"Lastnost '{0}' je prekratka (<{1} znakov) (vrednost: {2})",
+  "msg_itm_not_found_by_entry_id":"Vnosa ni mogoče najti po ID-ju: {0}",
+  "msg_itm_not_found_by_target_id":"Vnosa ni mogoče najti po ciljnem ID-ju: {0}",
+  "msg_itm_duplicate_id":"podvojen ID: {0}",
+  "msg_itm_id_different_targetId":"Lastnost 'id' {0} mora biti drugačna kot lastnost 'targetId' {1}",
+  "msg_itm_model_properties_not_null":"Podati morate lastnosti modela",
+  "msg_itm_cannot_be_blank":"Lastnost '{0}' ne sme biti prazna (vrednost: {1})",
+  "msg_itm_cannot_null":"Lastnost '{0}' mora imeti vrednost (vrednost: {1})",
+  "msg_itm_cannot_connect_to_connections":"- povezave s programsko opremo Connections ni mogoče vzpostaviti",
+  "msg_itm_unknown_property":"Lastnost '{0}' ni definirana v modelu",
+  "msg_itm_object_too_long":"- predmet mora biti krajši od {0} znakov",
+  "msg_itm_reached_maximum_visible_entries": "Doseženo je bilo največje število vnosov."
+}
+

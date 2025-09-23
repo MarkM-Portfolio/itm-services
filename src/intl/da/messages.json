@@ -1,0 +1,18 @@
+{
+  "8a39126103a157f501affa070367a1b0": "Forekomsten {0} er ikke gyldig. Detaljer: {1}.",
+  "msg_itm_error_name_required":"Fejl - navn er påkrævet",
+  "msg_itm_property_too_long":"Egenskaben {0} er for lang (>{1} tegn) (værdi: {2})",
+  "msg_itm_property_too_short":"Egenskaben {0} er for kort (<{1} tegn) (værdi: {2})",
+  "msg_itm_not_found_by_entry_id":"Kan ikke finde indgang med id: {0}",
+  "msg_itm_not_found_by_target_id":"Kan ikke finde indgang med targetId: {0}",
+  "msg_itm_duplicate_id":"sammenfaldende id: {0}",
+  "msg_itm_id_different_targetId":"'id'-egenskaben {0} skal være forskellige fra 'targetId'-egenskaben {1}",
+  "msg_itm_model_properties_not_null":"Models egenskaber skal være angivet",
+  "msg_itm_cannot_be_blank":"Egenskaben {0} må ikke være tom (værdi: {1})",
+  "msg_itm_cannot_null":"Egenskaben {0} skal have en værdi (værdi: {1})",
+  "msg_itm_cannot_connect_to_connections":"kan ikke oprette forbindelse til Connections",
+  "msg_itm_unknown_property":"Egenskaben {0} er ikke defineret i modellen",
+  "msg_itm_object_too_long":"objektet skal være kortere end {0} tegn",
+  "msg_itm_reached_maximum_visible_entries": "Det maksimale antal indgange er nået."
+}
+

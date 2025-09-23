@@ -1,0 +1,18 @@
+{
+  "8a39126103a157f501affa070367a1b0": "{0} данасы жарамсыз. Мәліметтер: {1}.",
+  "msg_itm_error_name_required":"Қате аты қажет",
+  "msg_itm_property_too_long":"'{0}' сипаты тым ұзын (>{1} таңба) (мәні: {2})",
+  "msg_itm_property_too_short":"'{0}' сипаты тым қысқа (<{1} таңба) (мәні: {2})",
+  "msg_itm_not_found_by_entry_id":"Идентификатор бойынша жазбасын табу мүмкін емес: {0}",
+  "msg_itm_not_found_by_target_id":"Мақсаттың ID коды бойынша жазбасын табу мүмкін емес: {0}",
+  "msg_itm_duplicate_id":"қайталанатын идентификаторы: {0}",
+  "msg_itm_id_different_targetId":"{0} 'id' сипаты {1} 'targetId' сипатынаң басқаша болу керек",
+  "msg_itm_model_properties_not_null":"Үлгі сипаттары көрсетілуі керек",
+  "msg_itm_cannot_be_blank":"'{0}' сипаты бос болмауы керек (мәні: {1})",
+  "msg_itm_cannot_null":"'{0}' сипаттың мәні болуы тиіс(мәні: {1})",
+  "msg_itm_cannot_connect_to_connections":"Connections байланысу мүмкін емес",
+  "msg_itm_unknown_property":"'{0}' сипаты үлгіде анықталмады",
+  "msg_itm_object_too_long":"нысан {0} таңбадан қысқа болуы керек",
+  "msg_itm_reached_maximum_visible_entries": "Жазбалар ең көп санынан асты"
+}
+

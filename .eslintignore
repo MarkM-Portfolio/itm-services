@@ -1,0 +1,2 @@
+# ignore auth related files as they will be take out from ITM soon
+src/middleware/auth/*

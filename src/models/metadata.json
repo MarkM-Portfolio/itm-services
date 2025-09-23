@@ -1,0 +1,40 @@
+{
+  "name": "Metadata",
+  "base": "Model",
+  "description": "an extended sub-document contains any extension fields",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "exId": {
+      "type": "string",
+      "required": false,
+      "description": "external id is required for people, not for community"
+    },
+    "hidden": {
+      "type": "boolean",
+      "required": false,
+      "default" : false,
+      "description": "to control visibility of current entry"
+    },
+    "email": {
+      "type": "string",
+      "required": false,
+      "default" : "",
+      "description": "email address for people"
+    },
+    "tel": {
+      "type": "object",
+      "required": false,
+      "default" : "",
+      "description": "telephone numbers of people, like tel:{mobile:'123456'}"
+    }
+  },
+  "strict": false,
+  "hidden":["id"],
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

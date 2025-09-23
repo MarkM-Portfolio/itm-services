@@ -1,0 +1,54 @@
+{
+  "id":"",
+  "name":"",
+  "startTime":"",
+  "type":"",
+  "actor":{
+    "id":"It is profile-key of the profile",
+    "name":"",
+    "email":""
+  },
+  "object":{
+    "id":"",
+    "name":"",
+    "type":"",
+    "url":[
+      {
+        "type":"Link",
+        "href":"",
+        "mediaType":"text/html"
+      }
+    ],
+    "content":"",
+    "mediaType":"HTML",
+    "generator":{
+      "type":"itm-services",
+      "name":"ITM-SERVICES"
+    },
+    "attributedTo":[{
+      "id":"It is profile-key of the profile",
+      "type":"Person"
+    }]
+  },
+  "origin":{
+    "id":"It is profile-key of the profile",
+    "name":"",
+    "url":[
+      {
+      "type":"Link",
+      "href":"/itm/api/entries",
+      "mediaType":"text/html"
+    }
+    ],
+    "organization": {
+      "id": "a",
+      "name": ""
+    }
+  },
+  "scope":"NONPUBLIC",
+  "targetingData":{
+    "followers":[],
+    "targetPeople":[],
+    "targetGroups":[]
+  }
+}

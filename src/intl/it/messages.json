@@ -1,0 +1,18 @@
+{
+  "8a39126103a157f501affa070367a1b0": "L'istanza {0} non è valida. Dettagli: {1}.",
+  "msg_itm_error_name_required":"Il nome dell'errore è obbligatorio",
+  "msg_itm_property_too_long":"La proprietà '{0}' è troppo lunga (>{1} caratteri) (valore: {2})",
+  "msg_itm_property_too_short":"La proprietà '{0}' è troppo corta (<{1} caratteri) (valore: {2})",
+  "msg_itm_not_found_by_entry_id":"Impossibile trovare la voce per id: {0}",
+  "msg_itm_not_found_by_target_id":"Impossibile trovare la voce per targetId: {0}",
+  "msg_itm_duplicate_id":"ID duplicato: {0}",
+  "msg_itm_id_different_targetId":"La proprietà 'id' {0} deve essere diversa dalla proprietà 'targetId' {1}",
+  "msg_itm_model_properties_not_null":"È necessario specificare le proprietà del modello",
+  "msg_itm_cannot_be_blank":"La proprietà '{0}' non può essere vuota (valore: {1})",
+  "msg_itm_cannot_null":"La proprietà '{0}' deve avere un valore (valore: {1})",
+  "msg_itm_cannot_connect_to_connections":"impossibile collegarsi a Connections",
+  "msg_itm_unknown_property":"La proprietà '{0}' non è definita nel modello",
+  "msg_itm_object_too_long":"l'oggetto deve contenere un numero di caratteri inferiore a {0}",
+  "msg_itm_reached_maximum_visible_entries": "È stato raggiunto il numero massimo di voci."
+}
+

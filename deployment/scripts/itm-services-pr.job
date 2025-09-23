@@ -1,0 +1,28 @@
+#!/bin/sh -e
+curl -k -u ${gitbuild_user_name}:${gitbuild_user_password} https://artifactory.swg.usma.ibm.com/artifactory/api/npm/auth > ~/.npmrc
+#!/bin/sh
+echo registry=\"https://artifactory.swg.usma.ibm.com/artifactory/api/npm/v-ess-npm-dev\"  >> ~/.npmrc
+
+node --version
+npm --version
+#ifconfig | grep 'inet addr'
+
+echo PATH=$PATH
+export PATH
+
+#rm -rf node_modules
+#rm -rf tests/reports
+
+npm install
+#curl -k http://localhost:3000/explorer/
+#npm run stop:test
+npm test --db=mongo-pipeline
+#npm run test:unit
+#npm run check:lint
+#npm run build
+#npm run start:test --db=mongo-pipeline
+#sleep 10
+#npm run test:api --db=mongo-pipeline
+#npm run stop:test
+
+rm -f ~/.npmrc
